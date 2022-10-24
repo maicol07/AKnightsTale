@@ -20,6 +20,7 @@ public class GameFinishedControllerImpl extends BaseController<GameFinishedView>
     @Override
     public void saveScore(final String name) {
         final var scoreboard = new ScoreboardImpl();
+        scoreboard.load();
         scoreboard.setScore(name, score);
         scoreboard.save();
     }
